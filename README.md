@@ -8,9 +8,9 @@ This library helps to call public APIs of SAP IoT Services and to easily integra
 ## Services
 **Service Name** | **Description** | **Example Link**
 ----------------- | ----------- | ----------
-```IoTAPIService``` | is for IoT Device Management API (All CRUD operations and device certificate management) | [Example](#iotapiservice-example)
-```IoTMeasureService``` | to read measurements (data-points) of a device | [Example] (#iotmeasureservice-example)
-```IoTGatewayService``` | to connect and send measurements (data-points) for a device (Currently, only Cloud MQTT Gateway is supported) | [Example] (#)
+```IoTAPIService``` | is for IoT Device Management API (All CRUD operations and device certificate management) | [Example 1](#iotapiservice-example)
+```IoTMeasureService``` | to read measurements (data-points) of a device | [Example](#iotmeasureservice-example)
+```IoTGatewayService``` | to connect and send measurements (data-points) for a device (Currently, only Cloud MQTT Gateway is supported) | [Example](#iotgatewayservice-example)
 
 ## Features
 * Create, List, Update of following SAP IoT Services elements
