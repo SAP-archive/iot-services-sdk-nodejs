@@ -12,19 +12,14 @@ iotService.list(iot.tenant.devices.authClientCertificate.pem, {
     deviceId: deviceId
 })
     .then((clientCertPem) => {
-        return clientCertPem.saveJson(deviceId + ".json", (error)=>{
-            if(error){
-                console.log(error);
-            }
-        });
+        return clientCertPem.saveJson(deviceId + ".json");
     })
     .then(() => {
-        return ClientCertPem.loadFrom(deviceId + ".json", (error, clientCert) => {
-            if(error)
-                console.log(error);
-            console.log(clientCert);
-        })
+        return ClientCertPem.loadFrom(deviceId + ".json");
+    })
+    .then((clientCert) => {
+        console.log(clientCert);
     })
     .catch((error) => {
-        console.log(error.message);
+        console.log(error);
     });

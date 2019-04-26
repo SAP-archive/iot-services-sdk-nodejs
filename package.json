@@ -2,9 +2,11 @@
   "name": "sap-iot-pg",
   "version": "1.0.0",
   "dependencies": {
+    "async-mqtt": "^2.2.1",
     "dotenv": "^7.0.0",
     "http": "^0.0.0",
+    "request": "^2.88.0",
     "request-promise-native": "^1.0.7",
-    "request": "^2.88.0"
+    "mqtt": "latest"
   }
 }
