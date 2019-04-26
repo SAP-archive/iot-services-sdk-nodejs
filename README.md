@@ -5,21 +5,24 @@ This library helps to call public APIs of SAP IoT Services and to easily integra
 - All data models are ES6 based classes
 - Whereever applicable, all APIs supports Node.JS Promise
 
-### Features
+## Services
+**Service Name** | **Description** | **Example Link**
+----------------- | ----------- | ----------
+```IoTAPIService``` | is for IoT Device Management API (All CRUD operations and device certificate management) | [Example](#iotapiservice-example)
+```IoTMeasureService``` | to read measurements (data-points) of a device | [Example] (#iotmeasureservice-example)
+```IoTGatewayService``` | to connect and send measurements (data-points) for a device (Currently, only Cloud MQTT Gateway is supported) | [Example] (#)
+
+## Features
 * Create, List, Update of following SAP IoT Services elements
-  * Capability
-  * SensorType
-  * Sensor
-  * Device
-  * Gateway
-  * Tenant
+  * [Capability, SensorType, Sensor, Device, Gateway, Tenant]
 * List certificates for a device
 * Download a new certificate for a device
 * Revoke a certificate for a device
 * List all data-points (measurements) sent from a device
 * Push data-point (measurement) for a device using device certificate
 
-### Example
+## Example ##
+#### IoTAPIService Example ####
 - First include a serviceObject (e.g. IoTAPIService) and a dataModelObject (e.g. IoT)
 ```javascript
 const iotService = new IoTAPIService();
@@ -70,7 +73,33 @@ iotService.list(iot.tenant.devices.authClientCertificate.pem, {
     // chain .then .catch if you wish
 ```
 
-### TODO / Future Scope
+
+#### IoTMeasureService Example ####
+```javascript
+IoTMeasureService
+    .listMeasures({deviceId: "0e4fe3e1-bf8b-44d7-8e6e-6f8184e9c06f"})
+    .then(measures => {
+        // Work with array of Measurement objects
+    });
+```
+
+#### IoTGatewayService Example ####
+```javascript
+const gateway = IoTGatewayService.gateway("MQTT", deviceAltId, clientCert);
+gateway.connect()
+    .then(gateway => {
+        return gateway.send(MESSAGE);
+    })
+    .then(() => {
+        // Work after sending message
+    })
+    .finally(() => {
+        gateway.disconnect();
+    })
+```
+
+## TODO / Future Scope
+- Allow custom observer when messagement gets acknolwedged by MQTT broker
 - Create all required elements from YAML file.
 - Gateway Bundle Management APIs
  
