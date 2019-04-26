@@ -3,7 +3,9 @@ This library helps to call public APIs of SAP IoT Services and to easily integra
 
 #### Technical Information
 - All data models are ES6 based classes
-- Whereever applicable, all APIs supports Node.JS Promise
+- Whereever applicable, all APIs support Node.JS Promise
+- [dotenv](https://www.npmjs.com/package/dotenv) based configuration supported to select IoT instance and tenant
+- ```clientid``` and ```clientsecret``` must be part of enviornment configuration.
 
 ## Services
 **Service Name** | **Description** | **Example Link**
