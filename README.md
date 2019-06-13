@@ -1,16 +1,33 @@
-# (Unofficial) Node.JS library for SAP IoT Services
+# Node.JS library for SAP IoT Services
 This library helps to call public APIs of SAP IoT Services and to easily integrate IoT apps working with Node.JS to SAP Cloud service.
 
-#### Technical Information
-- All data models are ES6 based classes
-- Whereever applicable, all APIs support Node.JS Promise
-- [dotenv](https://www.npmjs.com/package/dotenv) based configuration supported to select IoT instance and tenant
-- ```clientid``` and ```clientsecret``` must be part of enviornment configuration.
+## Requirements
+
+An instance of SAP IoT Services (Cloud Foundry) to use this SDK. 
+Find more information about SAP IoT Service product [here](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-Internet-of-Things.48b79cfa-3d49-4a42-9249-e589696691ae.html). To enable SAP IoT Service in your account follow this [help page](https://help.sap.com/viewer/c48328a1bee749da9902d52f080dba0d/Cloud/en-US). 
+
+## Download and Installation
+
+To install Node.JS package for a project,
+```$ npm install iot-services-sdk --save```
+<br></br>
+To import Node.JS package in your project add following dependencies in your ```package.json```,
+```
+"dependencies": {
+   ...
+   "iot-services-sdk": "^latest",
+   ...
+ },
+```
+
+## Configuration
+- Rename ```.env.template``` to ```.env``` and change values respectively for IoT Tenant and Credentials.
+- For more information, see [dotenv](https://www.npmjs.com/package/dotenv) NPM configuration.
 
 ## Services
 **Service Name** | **Description** | **Example Link**
 ----------------- | ----------- | ----------
-```IoTAPIService``` | is for IoT Device Management API (All CRUD operations and device certificate management) | [Example](#iotapiservice-example)
+```IoTDeviceService``` | is for IoT Device Management API (All CRUD operations and device certificate management) | [Example](#iotapiservice-example)
 ```IoTMeasureService``` | to read measurements (data-points) of a device | [Example](#iotmeasureservice-example)
 ```IoTGatewayService``` | to connect and send measurements (data-points) for a device (Currently, only Cloud MQTT Gateway is supported) | [Example](#iotgatewayservice-example)
 
@@ -25,9 +42,9 @@ This library helps to call public APIs of SAP IoT Services and to easily integra
 
 ## Example ##
 #### IoTAPIService Example ####
-- First include a serviceObject (e.g. IoTAPIService) and a dataModelObject (e.g. IoT)
+- First include a serviceObject (e.g. IoTDeviceService) and a dataModelObject (e.g. IoT)
 ```javascript
-const iotService = new IoTAPIService();
+const iotService = new IoTDeviceService();
 const iot = new IoT();
 ```
 - To list all objects of an element, (e.g. SensorTypes)
@@ -100,11 +117,15 @@ gateway.connect()
     })
 ```
 
-## TODO / Future Scope
-- Allow custom observer when messagement gets acknolwedged by MQTT broker
+## TODO / Future Scopes
+- Allow custom observer when message gets acknowledged by MQTT broker
 - Create all required elements from YAML file.
 - Gateway Bundle Management APIs
- 
 
+## How to obtain support
 
+Please create issue at [issues](issues) to get support or report bug.
 
+## License
+
+Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
