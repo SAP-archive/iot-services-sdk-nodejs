@@ -124,7 +124,7 @@ gateway.connect()
 
 ## How to obtain support
 
-Please create issue at [issues](issues) to get support or report bug.
+Please create issue at [issues](https://github.com/SAP/iot-services-sdk-nodejs/issues) to get support or report bug.
 
 ## License
 
