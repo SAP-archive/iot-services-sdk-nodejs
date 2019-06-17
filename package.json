@@ -1,0 +1,18 @@
+{
+  "name": "iot-services-sdk",
+  "description": "SAP Internet of Things Services (Cloud Foundry Edition) API SDK with ES6 class modelling and NodeJS Promise support.",
+  "version": "2.0.0",
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "request-promise-native": "^1.0.7",
+    "request": "^2.88.0",
+    "mqtt": "^2.18.8"
+  },
+  "author": {
+    "name": "Punit Ghodasara",
+    "email": "punit.ghodasara@sap.com"
+  },
+  "keywords": [
+    "Internet of Things"
+  ]
+}
