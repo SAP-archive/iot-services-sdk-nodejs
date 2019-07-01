@@ -129,4 +129,4 @@ Please create issue at [issues](https://github.com/SAP/iot-services-sdk-nodejs/i
 ## License
 
 Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved. <br/>
-This project is licensed under the Apache Software License, v.2 except as noted otherwise in the LICENSE file.
+This project is licensed under the Apache Software License, v.2 except as noted otherwise in the [LICENSE](LICENSE) file.
