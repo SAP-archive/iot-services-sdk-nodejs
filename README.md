@@ -1,3 +1,8 @@
+![](https://img.shields.io/badge/STATUS-NOT%20CURRENTLY%20MAINTAINED-red.svg?longCache=true&style=flat)
+
+# Important Notice
+We have decided to stop the maintenance of this public GitHub repository.
+
 # Node.JS library for SAP IoT Services
 This library helps to call public APIs of SAP IoT Services and to easily integrate IoT apps working with Node.JS to SAP Cloud service.
 
